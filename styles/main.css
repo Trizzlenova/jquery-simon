@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+
+#container {
+    height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+#gameboard {
+    background-color: black;
+    height: 60vh;
+    width: 60vh;
+    border-radius: 40em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#green, #yellow, #blue, #red {
+    border: 1em solid black;
+    width: 25vh;
+    height: 25vh;
+    z-index: -1;
+    opacity: .5;
+}
+
+#green {
+    border-top-right-radius:0;
+    border-top-left-radius:100%;
+    border-bottom-right-radius:0;
+    border-bottom-left-radius: 0;
+    background: green;
+}
+
+#yellow {
+    border-top-right-radius:0;
+    border-top-left-radius:0;
+    border-bottom-right-radius:0;
+    border-bottom-left-radius:100%;
+    background: yellow;
+}
+
+#blue {
+    border-top-right-radius:0;
+    border-top-left-radius:0;
+    border-bottom-right-radius:100%;
+    border-bottom-left-radius:0;
+    background: blue;
+}
+
+#red {
+    border-top-right-radius:100%;
+    border-top-left-radius:0;
+    border-bottom-right-radius:0;
+    border-bottom-left-radius:0;
+    background: red;
+}
+
+#simon {
+    font-family: 'Dhurjati';
+    background-color: black;
+    height: 20vh;
+    width: 20vh;
+    border-radius: 20em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#logo {
+    font-size: .8em;
+}
+
+#name {
+    color: white;
+    font-size: 6em;
+    height: 8.5vh;
+}
+
+#power {
+    height: 1.8vh;
+    width: 7vh;
+    color: white;
+    display: flex;
+    margin-bottom: 1em;
+    margin-left: 1.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#start {
+    width: 5vh;
+}
+
+#light {
+    opacity: .5em;
+    background-color: #8a0000;
+    border-radius: 20em;
+    height: 0.7vh;
+    width: 0.7vh;
+    margin: 0 auto;
+}
+
+#round {
+    color: black;
+    font-size: 7em;
+    font-family: 'Digital-7';
+    letter-spacing: .5rem;
+    border-radius: .2em;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    height: 5.5vh;
+    width: 10vh;
+    background-color: #5b5a5a;
+}
+
+/* animations */
+#background {
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    position: fixed;
+    background-image: url('https://images.unsplash.com/photo-1520034475321-cbe63696469a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+#letters {
+    height: 100vh;
+    font-family: 'Dhurjati';
+    font-size: 30em;
+    resize: none;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fall {
+    height: 5%;
+    /* width: 5%; */
+    position: relative;
+    transform-origin: 10% 50%;
+}
+
+#s {
+    animation: falling-s 8s linear infinite;
+}
+
+#i {
+    animation: falling-i 7s linear infinite;
+}
+
+#m {
+    animation: falling-m 12s linear infinite;
+}
+
+#o {
+    animation: falling-o 8s linear infinite;
+}
+
+#n {
+    animation: falling-n 10s linear infinite;
+}
+
+@keyframes falling-s {
+    0% {
+        top: -40%;
+        color: green;
+        opacity: .3;
+    }
+    25% {
+        top: -5%;
+        color: red;
+        /* transform: rotate(90deg); */
+        opacity: .7;
+    }
+    50% {
+        top: 30%;
+        color: yellow;
+        /* transform: rotate(180deg); */
+        opacity: .3;
+    }
+    75% {
+        top: 70%;
+        color: blue;
+        opacity: .5;
+    }
+    100% {
+        top: 100%;
+        color: green;
+        /* transform: rotate(270deg); */
+        /* transform: rotate(360deg); */
+        opacity: .8;
+    }
+}
+
+@keyframes falling-i {
+    0% {
+        top: -30%;
+        color: red;
+        opacity: .3;
+    }
+    25% {
+        top: 10%;
+        color: yellow;
+        /* transform: rotate(90deg); */
+        opacity: .7;
+    }
+    50% {
+        top: 50%;
+        color: green;
+        /* transform: rotate(180deg); */
+        opacity: .3;
+    }
+    75% {
+        top: 90%;
+        color: blue;
+        opacity: .5;
+    }
+    100% {
+        top: 100%;
+        color: red;
+        /* transform: rotate(270deg); */
+        /* transform: rotate(360deg); */
+        opacity: .8;
+    }
+}
+
+@keyframes falling-m {
+    0% {
+        top: -30%;
+        color: yellow;
+        opacity: .3;
+    }
+    25% {
+        top: 10%;
+        color: green;
+        /* transform: rotate(90deg); */
+        opacity: .7;
+    }
+    50% {
+        top: 40%;
+        color: blue;
+        /* transform: rotate(180deg); */
+        opacity: .3;
+    }
+    75% {
+        top: 70%;
+        color: red;
+        opacity: .5;
+    }
+    100% {
+        top: 100%;
+        color: green;
+        /* transform: rotate(270deg); */
+        /* transform: rotate(360deg); */
+        opacity: .8;
+    }
+}
+
+@keyframes falling-o {
+    0% {
+        top: -40%;
+        color: blue;
+        opacity: .3;
+    }
+    25% {
+        top: 0%;
+        color: yellow;
+        /* transform: rotate(90deg); */
+        opacity: .7;
+    }
+    50% {
+        top: 40%;
+        color: red;
+        /* transform: rotate(180deg); */
+        opacity: .3;
+    }
+    75% {
+        top: 70%;
+        color: green;
+        opacity: .5;
+    }
+    100% {
+        top: 100%;
+        color: blue;
+        /* transform: rotate(270deg); */
+        /* transform: rotate(360deg); */
+        opacity: .8;
+    }
+}
+
+@keyframes falling-n {
+    0% {
+        top: -30%;
+        color: yellow;
+        opacity: .3;
+    }
+    25% {
+        top: 10%;
+        color: red;
+        /* transform: rotate(90deg); */
+        opacity: .7;
+    }
+    50% {
+        top: 50%;
+        color: green;
+        /* transform: rotate(180deg); */
+        opacity: .3;
+    }
+    75% {
+        top: 90%;
+        color: blue;
+        opacity: .5;
+    }
+    100% {
+        top: 100%;
+        color: yellow;
+        /* transform: rotate(270deg); */
+        /* transform: rotate(360deg); */
+        opacity: .8;
+    }
+}
+
+@media (max-width: 1024px) {
+    #name {
+        font-size: 5em;
+
+    }
+    #round {
+        font-size: 6em;
+    }
+}
+
+@media (max-width: 960px) {
+    #name {
+        font-size: 4em;
+
+    }
+    #round {
+        font-size: 5em;
+    }
+}
+
+@media (max-width: 480px) {
+    #name {
+        font-size: 3em;
+    }
+    #round {
+        font-size: 3em;
+    }
+
+    #button {
+        font-size: 2em;
+    }
+  }
